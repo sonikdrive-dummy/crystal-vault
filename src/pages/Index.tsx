@@ -8,6 +8,7 @@ import TabSwitcher from "@/components/TabSwitcher";
 import TabContent from "@/components/TabContent";
 import TrustSection from "@/components/TrustSection";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState<"personal" | "business">("personal");
@@ -42,6 +43,9 @@ const Index = () => {
 
       {/* Trust & Testimonials */}
       <TrustSection />
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* Footer */}
       <Footer />

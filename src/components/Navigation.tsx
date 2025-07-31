@@ -8,10 +8,10 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", href: "#home" },
+    { label: "Home", href: "/" },
     { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "For Business", href: "#business" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "For Business", href: "#features" },
     { label: "FAQ", href: "#faq" },
     { label: "Support", href: "#support" },
   ];
@@ -56,20 +56,22 @@ const Navigation = () => {
 
           {/* Auth Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-            <motion.button
+            <motion.a
+              href="/login"
               className="px-6 py-2 text-foreground hover:text-primary font-medium transition-colors duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Log In
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+              href="/signup"
               className="glass-button px-6 py-2 rounded-lg text-primary-foreground font-medium"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Sign Up
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -118,12 +120,12 @@ const Navigation = () => {
               </motion.a>
             ))}
             <div className="pt-4 border-t border-border space-y-3">
-              <button className="block w-full text-left text-foreground hover:text-primary font-medium transition-colors duration-200">
+              <a href="/login" className="block w-full text-left text-foreground hover:text-primary font-medium transition-colors duration-200">
                 Log In
-              </button>
-              <button className="glass-button w-full px-4 py-2 rounded-lg text-primary-foreground font-medium">
+              </a>
+              <a href="/signup" className="glass-button block w-full px-4 py-2 rounded-lg text-primary-foreground font-medium text-center">
                 Sign Up
-              </button>
+              </a>
             </div>
           </div>
         </motion.div>
