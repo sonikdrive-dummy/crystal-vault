@@ -8,55 +8,224 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 const Pricing = () => {
   const [activeTab, setActiveTab] = useState<"personal" | "business">("personal");
+  const [personalTerm, setPersonalTerm] = useState<"monthly" | "semi-annually" | "annually">("monthly");
+  const [businessTerm, setBusinessTerm] = useState<"monthly" | "annually">("monthly");
 
-  const personalPlans = [
-    {
-      name: "Monthly",
-      price: "$9.99",
-      period: "/month",
-      storage: "100 GB",
-      features: ["Cross-device sync", "File sharing", "Basic support", "30-day version history"],
-      popular: false,
-    },
-    {
-      name: "Semi-Annual",
-      price: "$49.99",
-      period: "/6 months",
-      originalPrice: "$59.94",
-      storage: "500 GB", 
-      features: ["Everything in Monthly", "Priority support", "90-day version history", "Advanced sharing controls"],
-      popular: true,
-    },
-    {
-      name: "Yearly",
-      price: "$89.99",
-      period: "/year",
-      originalPrice: "$119.88",
-      storage: "1 TB",
-      features: ["Everything in Semi-Annual", "Premium support", "1-year version history", "Advanced security"],
-      popular: false,
-    },
-  ];
+  const personalPlans = {
+    monthly: [
+      {
+        id: "trial",
+        name: "Trial Plan",
+        price: "$0",
+        period: "/week",
+        storage: "25 GB",
+        features: ["7-day free trial", "Basic file sharing", "Cross-device sync", "Email support"],
+        popular: false,
+        originalPrice: undefined,
+      },
+      {
+        id: "basic",
+        name: "Basic",
+        price: "$29",
+        period: "/month",
+        storage: "50 GB",
+        features: ["Cross-device sync", "File sharing", "Basic support", "30-day version history"],
+        popular: false,
+        originalPrice: undefined,
+      },
+      {
+        id: "standard",
+        name: "Standard",
+        price: "$49",
+        period: "/month",
+        storage: "100 GB",
+        features: ["Everything in Basic", "Priority support", "90-day version history", "Advanced sharing"],
+        popular: true,
+        originalPrice: undefined,
+      },
+      {
+        id: "premium",
+        name: "Premium",
+        price: "$229",
+        period: "/month",
+        storage: "500 GB",
+        features: ["Everything in Standard", "Premium support", "1-year version history", "Advanced security"],
+        popular: false,
+        originalPrice: undefined,
+      },
+      {
+        id: "pro",
+        name: "SonikDrive Pro",
+        price: "$349",
+        period: "/month",
+        storage: "1 TB",
+        features: ["Everything in Premium", "24/7 support", "Unlimited version history", "Enterprise security"],
+        popular: false,
+        originalPrice: undefined,
+      },
+    ],
+    "semi-annually": [
+      {
+        id: "basic",
+        name: "Basic",
+        price: "$174",
+        period: "/6 months",
+        originalPrice: "$174",
+        storage: "50 GB",
+        features: ["Cross-device sync", "File sharing", "Basic support", "30-day version history"],
+        popular: false,
+      },
+      {
+        id: "standard",
+        name: "Standard",
+        price: "$294",
+        period: "/6 months",
+        originalPrice: "$294",
+        storage: "100 GB",
+        features: ["Everything in Basic", "Priority support", "90-day version history", "Advanced sharing"],
+        popular: true,
+      },
+      {
+        id: "premium",
+        name: "Premium",
+        price: "$1,314",
+        period: "/6 months",
+        originalPrice: "$1,374",
+        storage: "500 GB",
+        features: ["Everything in Standard", "Premium support", "1-year version history", "Advanced security"],
+        popular: false,
+      },
+      {
+        id: "pro",
+        name: "SonikDrive Pro",
+        price: "$2,034",
+        period: "/6 months",
+        originalPrice: "$2,094",
+        storage: "1 TB",
+        features: ["Everything in Premium", "24/7 support", "Unlimited version history", "Enterprise security"],
+        popular: false,
+      },
+    ],
+    annually: [
+      {
+        id: "basic",
+        name: "Basic",
+        price: "$348",
+        period: "/year",
+        originalPrice: "$348",
+        storage: "50 GB",
+        features: ["Cross-device sync", "File sharing", "Basic support", "30-day version history"],
+        popular: false,
+      },
+      {
+        id: "standard",
+        name: "Standard",
+        price: "$540",
+        period: "/year",
+        originalPrice: "$588",
+        storage: "100 GB",
+        features: ["Everything in Basic", "Priority support", "90-day version history", "Advanced sharing"],
+        popular: true,
+      },
+      {
+        id: "premium",
+        name: "Premium",
+        price: "$2,508",
+        period: "/year",
+        originalPrice: "$2,748",
+        storage: "500 GB",
+        features: ["Everything in Standard", "Premium support", "1-year version history", "Advanced security"],
+        popular: false,
+      },
+      {
+        id: "pro",
+        name: "SonikDrive Pro",
+        price: "$3,948",
+        period: "/year",
+        originalPrice: "$4,188",
+        storage: "1 TB",
+        features: ["Everything in Premium", "24/7 support", "Unlimited version history", "Enterprise security"],
+        popular: false,
+      },
+    ],
+  };
 
-  const businessPlans = [
-    {
-      name: "Monthly",
-      price: "$25",
-      period: "/user/month",
-      storage: "Unlimited",
-      features: ["Team collaboration", "Admin controls", "Advanced security", "Priority support", "SSO integration"],
-      popular: false,
-    },
-    {
-      name: "Yearly",
-      price: "$250",
-      period: "/user/year", 
-      originalPrice: "$300",
-      storage: "Unlimited",
-      features: ["Everything in Monthly", "Advanced analytics", "Compliance tools", "24/7 premium support", "Custom integrations"],
-      popular: true,
-    },
-  ];
+  const businessPlans = {
+    monthly: [
+      {
+        id: "trial",
+        name: "Trial",
+        price: "$0",
+        period: "/fortnight",
+        storage: "50 GB",
+        features: ["14-day free trial", "Team collaboration", "Basic admin controls", "Email support"],
+        popular: false,
+        originalPrice: undefined,
+      },
+      {
+        id: "launch",
+        name: "Launch",
+        price: "$139",
+        period: "/user/month",
+        storage: "100 GB",
+        features: ["Team collaboration", "Admin controls", "Advanced security", "Priority support", "SSO integration"],
+        popular: false,
+        originalPrice: undefined,
+      },
+      {
+        id: "grow",
+        name: "Grow",
+        price: "$599",
+        period: "/user/month",
+        storage: "500 GB",
+        features: ["Everything in Launch", "Advanced analytics", "Compliance tools", "24/7 support", "Custom integrations"],
+        popular: true,
+        originalPrice: undefined,
+      },
+      {
+        id: "scale",
+        name: "Scale",
+        price: "$1,099",
+        period: "/user/month",
+        storage: "1 TB",
+        features: ["Everything in Grow", "Dedicated support", "Advanced compliance", "Custom workflows", "Enterprise features"],
+        popular: false,
+        originalPrice: undefined,
+      },
+    ],
+    annually: [
+      {
+        id: "launch",
+        name: "Launch",
+        price: "$1,428",
+        period: "/user/year",
+        originalPrice: "$1,668",
+        storage: "100 GB",
+        features: ["Team collaboration", "Admin controls", "Advanced security", "Priority support", "SSO integration"],
+        popular: false,
+      },
+      {
+        id: "grow",
+        name: "Grow",
+        price: "$6,588",
+        period: "/user/year",
+        originalPrice: "$7,188",
+        storage: "500 GB",
+        features: ["Everything in Launch", "Advanced analytics", "Compliance tools", "24/7 support", "Custom integrations"],
+        popular: true,
+      },
+      {
+        id: "scale",
+        name: "Scale",
+        price: "$12,288",
+        period: "/user/year",
+        originalPrice: "$13,188",
+        storage: "1 TB",
+        features: ["Everything in Grow", "Dedicated support", "Advanced compliance", "Custom workflows", "Enterprise features"],
+        popular: false,
+      },
+    ],
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -107,6 +276,48 @@ const Pricing = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* Sub-tab switcher for terms */}
+          <motion.div 
+            className="flex justify-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+          >
+            <div className="glass-card p-2 rounded-full">
+              <div className="flex space-x-2">
+                {activeTab === "personal" ? (
+                  ["monthly", "semi-annually", "annually"].map((term) => (
+                    <button
+                      key={term}
+                      onClick={() => setPersonalTerm(term as "monthly" | "semi-annually" | "annually")}
+                      className={`px-6 py-2 rounded-full font-medium transition-all duration-300 capitalize ${
+                        personalTerm === term
+                          ? "bg-primary text-primary-foreground shadow-lg"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {term === "semi-annually" ? "Semi-Annual" : term}
+                    </button>
+                  ))
+                ) : (
+                  ["monthly", "annually"].map((term) => (
+                    <button
+                      key={term}
+                      onClick={() => setBusinessTerm(term as "monthly" | "annually")}
+                      className={`px-6 py-2 rounded-full font-medium transition-all duration-300 capitalize ${
+                        businessTerm === term
+                          ? "bg-primary text-primary-foreground shadow-lg"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {term}
+                    </button>
+                  ))
+                )}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -114,17 +325,21 @@ const Pricing = () => {
       <section className="pb-20">
         <div className="container mx-auto px-4">
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-7xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {(activeTab === "personal" ? personalPlans : businessPlans).map((plan, index) => (
+            {(activeTab === "personal" 
+              ? personalPlans[personalTerm] 
+              : businessPlans[businessTerm]
+            ).map((plan, index) => (
               <motion.div
-                key={plan.name}
+                key={plan.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                className={activeTab === "personal" && personalTerm === "monthly" && index === 0 ? "lg:col-span-1" : ""}
               >
                 <Card className={`glass-card relative h-full ${plan.popular ? "ring-2 ring-primary" : ""}`}>
                   {plan.popular && (
@@ -137,11 +352,11 @@ const Pricing = () => {
                   )}
                   
                   <CardHeader className="text-center pb-8">
-                    <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
+                    <CardTitle className="text-xl font-bold">{plan.name}</CardTitle>
                     <div className="mt-4">
                       <div className="flex items-baseline justify-center">
-                        <span className="text-4xl font-bold text-primary">{plan.price}</span>
-                        <span className="text-muted-foreground ml-1">{plan.period}</span>
+                        <span className="text-3xl font-bold text-primary">{plan.price}</span>
+                        <span className="text-muted-foreground ml-1 text-sm">{plan.period}</span>
                       </div>
                       {plan.originalPrice && (
                         <div className="text-sm text-muted-foreground line-through mt-1">
@@ -149,7 +364,7 @@ const Pricing = () => {
                         </div>
                       )}
                     </div>
-                    <CardDescription className="text-lg font-medium mt-2">
+                    <CardDescription className="text-base font-medium mt-2">
                       {plan.storage} storage
                     </CardDescription>
                   </CardHeader>
@@ -157,8 +372,8 @@ const Pricing = () => {
                   <CardContent className="space-y-6">
                     <ul className="space-y-3">
                       {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center gap-3">
-                          <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                        <li key={featureIndex} className="flex items-start gap-3">
+                          <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                           <span className="text-sm">{feature}</span>
                         </li>
                       ))}
@@ -168,7 +383,7 @@ const Pricing = () => {
                       className={`w-full glass-button ${plan.popular ? "bg-primary hover:bg-primary/90" : ""}`}
                       variant={plan.popular ? "default" : "outline"}
                     >
-                      Choose {plan.name}
+                      {plan.price === "$0" ? "Start Free Trial" : `Choose ${plan.name}`}
                     </Button>
                   </CardContent>
                 </Card>
