@@ -13,7 +13,7 @@ const Navigation = () => {
     { label: "Pricing", href: "/pricing" },
     { label: "For Business", href: "#features" },
     { label: "FAQ", href: "#faq" },
-    { label: "Support", href: "#support" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
