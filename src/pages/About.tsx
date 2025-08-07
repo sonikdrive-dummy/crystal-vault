@@ -130,7 +130,80 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team Section */}
+        {/* Meet Our Experts Section */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold mb-4">Meet Our Experts</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our team of industry veterans and innovative minds work tirelessly to bring you the best cloud storage experience.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  name: "Sarah Chen",
+                  title: "Chief Technology Officer",
+                  description: "Former Google engineer with 12+ years in cloud infrastructure and distributed systems.",
+                  image: "👩‍💻"
+                },
+                {
+                  name: "Marcus Rodriguez",
+                  title: "Head of Security",
+                  description: "Cybersecurity expert specializing in enterprise-grade encryption and data protection.",
+                  image: "👨‍💼"
+                },
+                {
+                  name: "Dr. Emily Watson",
+                  title: "VP of Engineering",
+                  description: "PhD in Computer Science, leading our AI-powered optimization and smart sync technologies.",
+                  image: "👩‍🔬"
+                },
+                {
+                  name: "James Park",
+                  title: "Product Manager",
+                  description: "User experience specialist ensuring our platform remains intuitive and powerful.",
+                  image: "👨‍💻"
+                },
+                {
+                  name: "Lisa Zhang",
+                  title: "Head of Operations",
+                  description: "Global infrastructure expert managing our worldwide network of data centers.",
+                  image: "👩‍💼"
+                },
+                {
+                  name: "Alex Thompson",
+                  title: "Customer Success Lead",
+                  description: "Dedicated to ensuring every user gets the most out of their SonikDrive experience.",
+                  image: "👨‍🎯"
+                }
+              ].map((expert, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="backdrop-blur-sm bg-card/50 rounded-2xl p-6 border border-border/50 text-center hover:bg-card/70 transition-colors duration-300"
+                >
+                  <div className="text-6xl mb-4">{expert.image}</div>
+                  <h3 className="text-xl font-semibold mb-2">{expert.name}</h3>
+                  <p className="text-primary font-medium mb-3">{expert.title}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{expert.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Our Story Section */}
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-6xl">
             <motion.div
