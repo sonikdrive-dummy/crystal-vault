@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import {
@@ -10,39 +11,7 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-
-const posts = [
-  {
-    slug: "ultimate-cloud-storage-guide",
-    title: "The Ultimate Guide to Secure Cloud Storage",
-    excerpt:
-      "Best practices to protect your files, from encryption to zero-knowledge setups.",
-    date: "2025-06-15",
-    author: "Team SonikDrive",
-    readTime: "6 min read",
-    tag: "Security",
-  },
-  {
-    slug: "speed-up-sync",
-    title: "10 Ways to Speed Up Your File Sync",
-    excerpt:
-      "Practical tips to boost sync performance across devices and networks.",
-    date: "2025-05-28",
-    author: "Team SonikDrive",
-    readTime: "4 min read",
-    tag: "Performance",
-  },
-  {
-    slug: "choose-right-plan",
-    title: "How to Choose the Right Cloud Plan for You",
-    excerpt:
-      "Storage vs. price vs. collaboration: picking the plan that fits your workflow.",
-    date: "2025-04-10",
-    author: "Team SonikDrive",
-    readTime: "5 min read",
-    tag: "Planning",
-  },
-];
+import { posts } from "@/data/blogs";
 
 const Blogs = () => {
   // Basic SEO without extra deps
@@ -87,7 +56,7 @@ const Blogs = () => {
           description: p.excerpt,
           datePublished: p.date,
           author: { "@type": "Organization", name: p.author },
-          url: window.location.origin + "/blogs#" + p.slug,
+          url: window.location.origin + "/blogs/" + p.slug,
         },
       })),
     };
@@ -108,7 +77,7 @@ const Blogs = () => {
     return posts.reduce<Record<string, typeof posts>>((acc, p) => {
       acc[p.tag] = acc[p.tag] ? [...acc[p.tag], p] : [p];
       return acc;
-    }, {});
+    }, {} as Record<string, typeof posts>);
   }, []);
 
   return (
@@ -152,13 +121,13 @@ const Blogs = () => {
                         </div>
                       </CardContent>
                       <CardFooter>
-                        <a
-                          href={`#${post.slug}`}
+                        <Link
+                          to={`/blogs/${post.slug}`}
                           className="text-primary font-medium hover:underline"
                           aria-label={`Read ${post.title}`}
                         >
                           Read more
-                        </a>
+                        </Link>
                       </CardFooter>
                     </Card>
                   </motion.article>
