@@ -1,8 +1,31 @@
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import {
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
+import type { ChartConfig } from "@/components/ui/chart";
 
 const About = () => {
+  const priceData = [
+    { service: "SonikDrive", price: 7.99 },
+    { service: "Dropbox", price: 11.99 },
+    { service: "Google Drive", price: 9.99 },
+  ];
+
+  const chartConfig: ChartConfig = {
+    price: {
+      label: "Price (USD/mo)",
+      color: "hsl(var(--primary))",
+    },
+  };
+
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -251,6 +274,21 @@ const About = () => {
                   <div className="font-medium">Award Winning</div>
                   <div className="text-sm text-muted-foreground">Industry recognition</div>
                 </div>
+              </div>
+
+              <div className="mt-8">
+                <div className="mb-3 text-sm text-muted-foreground">Price comparison for 2TB plans (lower is better)</div>
+                <ChartContainer config={chartConfig} className="w-full">
+                  <BarChart data={priceData} margin={{ left: 12, right: 12 }}>
+                    <CartesianGrid vertical={false} />
+                    <XAxis dataKey="service" tickLine={false} axisLine={false} tickMargin={8} />
+                    <YAxis tickLine={false} axisLine={false} tickFormatter={(v) => `$${v}`} />
+                    <ChartTooltip content={<ChartTooltipContent nameKey="service" />} />
+                    <Bar dataKey="price" fill="var(--color-price)" radius={6} />
+                    <ChartLegend content={<ChartLegendContent />} />
+                  </BarChart>
+                </ChartContainer>
+                <p className="mt-2 text-xs text-muted-foreground">SonikDrive offers the most affordable plan without compromising performance.</p>
               </div>
             </motion.div>
           </div>
