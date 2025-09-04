@@ -1,0 +1,59 @@
+## Error Type
+Recoverable Error
+
+## Error Message
+Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <BlogsPage>
+      <Blogs>
+        ...
+          <section className="py-16 px-4">
+            <div className="container ...">
+              <header>
+              <div className="grid lg:gr...">
+                <div className="grid sm:gr...">
+                  <motion.article id="ultimate-c..." initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} ...>
+                    <article id="ultimate-c..." style={{opacity:0, ...}} ref={function}>
+                      <_c className="h-full hov...">
+                        <div ref={null} className="rounded-lg...">
+                          <_c2>
+                          <_c8>
+                            <div ref={null} className="p-6 pt-0">
+                              <div className="flex flex-...">
+                                <span>
++                                 15/6/2025
+-                                 6/15/2025
+                                ...
+                          ...
+                  ...
+                ...
+
+
+
+    at span (<anonymous>:null:null)
+    at eval (src/pages/Blogs.tsx:118:27)
+    at Array.map (<anonymous>:null:null)
+    at Blogs (src/pages/Blogs.tsx:102:24)
+    at BlogsPage (app/blogs/page.tsx:4:10)
+
+## Code Frame
+  116 |                       <CardContent>
+  117 |                         <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
+> 118 |                           <span>{new Date(post.date).toLocaleDateString()}</span>
+      |                           ^
+  119 |                           <span>•</span>
+  120 |                           <span>{post.readTime}</span>
+  121 |                           <span>•</span>
+
+Next.js version: 15.5.2 (Webpack)

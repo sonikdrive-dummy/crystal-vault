@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { format } from "date-fns";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -78,7 +79,7 @@ const BlogDetail = () => {
             <header className="mb-6">
               <h1 className="text-3xl md:text-4xl font-bold mb-3">{post.title}</h1>
               <p className="text-sm text-muted-foreground">
-                {new Date(post.date).toLocaleDateString()} • {post.readTime} • {post.tag}
+                {format(new Date(post.date), 'MMM dd, yyyy')} • {post.readTime} • {post.tag}
               </p>
             </header>
 

@@ -14,6 +14,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { posts } from "@/data/blogs";
+import { format } from "date-fns";
 
 const Blogs = () => {
   // Basic SEO without extra deps
@@ -115,7 +116,7 @@ const Blogs = () => {
                       </CardHeader>
                       <CardContent>
                         <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
-                          <span>{new Date(post.date).toLocaleDateString()}</span>
+                          <span>{format(new Date(post.date), 'MMM dd, yyyy')}</span>
                           <span>•</span>
                           <span>{post.readTime}</span>
                           <span>•</span>
