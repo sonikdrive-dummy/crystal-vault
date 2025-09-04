@@ -1,5 +1,8 @@
+"use client";
+
 import { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "next/navigation";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -8,7 +11,8 @@ import { getPostBySlug } from "@/data/blogs";
 import NotFound from "./NotFound";
 
 const BlogDetail = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const params = useParams();
+  const slug = params?.slug as string;
   const post = slug ? getPostBySlug(slug) : undefined;
 
   useEffect(() => {
@@ -68,7 +72,7 @@ const BlogDetail = () => {
         <section className="py-12 px-4">
           <div className="container mx-auto max-w-3xl">
             <nav className="mb-6 text-sm">
-              <Link to="/blogs" className="story-link text-muted-foreground">← Back to Blog</Link>
+              <Link href="/blogs" className="story-link text-muted-foreground">← Back to Blog</Link>
             </nav>
 
             <header className="mb-6">

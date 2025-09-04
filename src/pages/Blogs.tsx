@@ -1,6 +1,8 @@
+"use client";
+
 import { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import {
@@ -122,7 +124,7 @@ const Blogs = () => {
                       </CardContent>
                       <CardFooter>
                         <Link
-                          to={`/blogs/${post.slug}`}
+                          href={`/blogs/${post.slug}`}
                           className="text-primary font-medium hover:underline"
                           aria-label={`Read ${post.title}`}
                         >

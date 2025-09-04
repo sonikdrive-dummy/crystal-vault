@@ -1,7 +1,9 @@
+"use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Lock, Eye, EyeOff, ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -157,7 +159,7 @@ const Login = () => {
                       <input type="checkbox" className="rounded border-input" />
                       <span className="text-muted-foreground">Remember me</span>
                     </label>
-                    <Link to="/forgot-password" className="text-primary hover:text-primary/80 transition-colors">
+                    <Link href="/forgot-password" className="text-primary hover:text-primary/80 transition-colors">
                       Forgot password?
                     </Link>
                   </div>
@@ -232,7 +234,7 @@ const Login = () => {
             >
               <span className="text-muted-foreground">Don't have an account? </span>
               <Link 
-                to={`/signup${userType === "business" ? "/business" : ""}`}
+                href={`/signup${userType === "business" ? "/business" : ""}`}
                 className="text-primary hover:text-primary/80 transition-colors font-medium"
               >
                 Sign up

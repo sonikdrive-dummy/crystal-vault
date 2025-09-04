@@ -1,7 +1,9 @@
+"use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Lock, Eye, EyeOff, User, Phone, Building } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -207,11 +209,11 @@ const Signup = () => {
                 {/* Terms and Privacy */}
                 <div className="text-sm text-muted-foreground">
                   By creating an account, you agree to our{" "}
-                  <Link to="/terms" className="text-primary hover:text-primary/80 transition-colors">
+                  <Link href="/terms" className="text-primary hover:text-primary/80 transition-colors">
                     Terms of Service
                   </Link>{" "}
                   and{" "}
-                  <Link to="/privacy" className="text-primary hover:text-primary/80 transition-colors">
+                  <Link href="/privacy" className="text-primary hover:text-primary/80 transition-colors">
                     Privacy Policy
                   </Link>
                 </div>
@@ -285,7 +287,7 @@ const Signup = () => {
             >
               <span className="text-muted-foreground">Already have an account? </span>
               <Link 
-                to={`/login${userType === "business" ? "/business" : ""}`}
+                href={`/login${userType === "business" ? "/business" : ""}`}
                 className="text-primary hover:text-primary/80 transition-colors font-medium"
               >
                 Sign in
