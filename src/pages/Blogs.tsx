@@ -105,9 +105,8 @@ const Blogs = () => {
                     key={post.slug}
                     id={post.slug}
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.5, delay: idx * 0.05 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: idx * 0.02 }}
                   >
                     <Card className="h-full hover:shadow-glow transition-shadow duration-300">
                       <CardHeader>
@@ -138,7 +137,12 @@ const Blogs = () => {
               </div>
 
               {/* Sidebar */}
-              <aside className="space-y-4">
+              <motion.aside 
+                className="space-y-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">Categories</CardTitle>
@@ -163,7 +167,7 @@ const Blogs = () => {
                     </CardDescription>
                   </CardHeader>
                 </Card>
-              </aside>
+              </motion.aside>
             </div>
           </div>
         </section>
