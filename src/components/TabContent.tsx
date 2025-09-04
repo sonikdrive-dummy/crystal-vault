@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import FeatureCard from "./FeatureCard";
 import { 
@@ -13,12 +14,22 @@ import {
   Settings,
   Lock
 } from "lucide-react";
+import BusinessOnlyModal from "./BusinessOnlyModal";
 
 interface TabContentProps {
   activeTab: "personal" | "business";
 }
 
 const TabContent = ({ activeTab }: TabContentProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    if (activeTab === "personal") {
+      setIsModalOpen(true);
+    } else {
+      window.open("https://sonik.com/signup", "_blank");
+    }
+  };
   const personalFeatures = [
     {
       icon: Share2,
@@ -122,6 +133,7 @@ const TabContent = ({ activeTab }: TabContentProps) => {
             className="glass-button px-8 py-4 rounded-xl text-lg font-semibold text-primary-foreground shadow-button"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleButtonClick}
           >
             {activeTab === "personal" 
               ? "Start Free Personal Account" 
@@ -130,6 +142,12 @@ const TabContent = ({ activeTab }: TabContentProps) => {
           </motion.button>
         </motion.div>
       </div>
+      
+      <BusinessOnlyModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        type="personal" 
+      />
     </section>
   );
 };

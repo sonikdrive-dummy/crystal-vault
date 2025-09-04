@@ -1,9 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Shield, Zap, Users } from "lucide-react";
+import BusinessOnlyModal from "./BusinessOnlyModal";
 
 const HeroSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleGetStartedClick = () => {
+    setIsModalOpen(true);
+  };
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
       {/* Background Elements */}
@@ -60,6 +67,7 @@ const HeroSection = () => {
               className="glass-button px-8 py-4 rounded-xl text-lg font-semibold text-primary-foreground flex items-center space-x-2 shadow-button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={handleGetStartedClick}
             >
               <span>Get Started Free</span>
               <ArrowRight className="h-5 w-5" />
@@ -119,6 +127,12 @@ const HeroSection = () => {
           />
         </motion.div>
       </motion.div>
+      
+      <BusinessOnlyModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        type="general" 
+      />
     </section>
   );
 };

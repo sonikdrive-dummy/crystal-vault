@@ -7,11 +7,21 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import BusinessOnlyModal from "@/components/BusinessOnlyModal";
 
 const Pricing = () => {
   const [activeTab, setActiveTab] = useState<"personal" | "business">("personal");
   const [personalTerm, setPersonalTerm] = useState<"monthly" | "semi-annually" | "annually">("monthly");
   const [businessTerm, setBusinessTerm] = useState<"monthly" | "annually">("monthly");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handlePlanClick = (planId: string, isPersonal: boolean) => {
+    if (isPersonal) {
+      setIsModalOpen(true);
+    } else {
+      window.open("https://sonik.com/signup", "_blank");
+    }
+  };
 
   const personalPlans = {
     monthly: [
@@ -282,7 +292,10 @@ const Pricing = () => {
                 <p className="text-muted-foreground text-sm mb-4">
                   Try {activeTab === "personal" ? "SonikDrive" : "SonikDrive Business"} risk-free with full access to core features
                 </p>
-                <Button className="w-full glass-button bg-primary hover:bg-primary/90">
+                <Button 
+                  className="w-full glass-button bg-primary hover:bg-primary/90"
+                  onClick={() => handlePlanClick("trial", activeTab === "personal")}
+                >
                   Start Free Trial
                 </Button>
               </CardContent>
@@ -394,6 +407,7 @@ const Pricing = () => {
                     <Button 
                       className={`w-full glass-button mt-6 ${plan.popular ? "bg-primary hover:bg-primary/90" : ""}`}
                       variant={plan.popular ? "default" : "outline"}
+                      onClick={() => handlePlanClick(plan.id, activeTab === "personal")}
                     >
                       {plan.price === "$0" ? "Start Free Trial" : `Choose ${plan.name}`}
                     </Button>
@@ -429,6 +443,12 @@ const Pricing = () => {
       </section>
 
       <Footer />
+      
+      <BusinessOnlyModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        type="general" 
+      />
     </div>
   );
 };
