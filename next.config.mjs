@@ -4,6 +4,20 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['@radix-ui/react-icons'],
   },
+  // Configure for Replit environment
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+        ],
+      },
+    ];
+  },
   async rewrites() {
     return [];
   },
