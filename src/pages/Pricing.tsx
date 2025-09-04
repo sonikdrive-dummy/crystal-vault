@@ -291,7 +291,7 @@ const Pricing = () => {
 
           {/* Sub-tab switcher for terms */}
           <motion.div 
-            className="flex justify-center mb-12"
+            className="flex justify-center mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -337,7 +337,7 @@ const Pricing = () => {
       <section className="pb-20">
         <div className="container mx-auto px-4">
           <motion.div 
-            className="flex flex-wrap justify-center gap-4 max-w-full mx-auto overflow-x-auto pt-6"
+            className="flex flex-wrap justify-center gap-4 max-w-full mx-auto overflow-x-auto pt-6 pb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
