@@ -341,7 +341,7 @@ const Pricing = () => {
       <section className="pb-20">
         <div className="container mx-auto px-4">
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-7xl mx-auto"
+            className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -355,9 +355,9 @@ const Pricing = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                className={activeTab === "personal" && personalTerm === "monthly" && index === 0 ? "lg:col-span-1" : ""}
+                className="w-full sm:w-80 max-w-sm"
               >
-                <Card className={`glass-card relative h-full ${plan.popular ? "ring-2 ring-primary" : ""}`}>
+                <Card className={`glass-card relative h-full flex flex-col ${plan.popular ? "ring-2 ring-primary" : ""}`}>
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                       <div className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium flex items-center gap-1">
@@ -385,8 +385,8 @@ const Pricing = () => {
                     </CardDescription>
                   </CardHeader>
                   
-                  <CardContent className="space-y-6">
-                    <ul className="space-y-3">
+                  <CardContent className="flex-1 flex flex-col">
+                    <ul className="space-y-3 flex-1">
                       {plan.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start gap-3">
                           <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
@@ -396,7 +396,7 @@ const Pricing = () => {
                     </ul>
                     
                     <Button 
-                      className={`w-full glass-button ${plan.popular ? "bg-primary hover:bg-primary/90" : ""}`}
+                      className={`w-full glass-button mt-6 ${plan.popular ? "bg-primary hover:bg-primary/90" : ""}`}
                       variant={plan.popular ? "default" : "outline"}
                     >
                       {plan.price === "$0" ? "Start Free Trial" : `Choose ${plan.name}`}
