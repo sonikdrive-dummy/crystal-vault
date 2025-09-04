@@ -94,7 +94,7 @@ const Navigation = () => {
         {/* Mobile Menu */}
         <motion.div
           className={`md:hidden overflow-hidden ${
-            isMobileMenuOpen ? "max-h-96" : "max-h-0"
+            isMobileMenuOpen ? "max-h-screen" : "max-h-0"
           }`}
           initial={false}
           animate={{
@@ -122,12 +122,34 @@ const Navigation = () => {
               </motion.a>
             ))}
             <div className="pt-4 border-t border-border space-y-3">
-              <a href="/login" className="block w-full text-left text-foreground hover:text-primary font-medium transition-colors duration-200">
+              <motion.a 
+                href="/login" 
+                className="block w-full text-left text-foreground hover:text-primary font-medium transition-colors duration-200"
+                initial={{ opacity: 0, x: -20 }}
+                animate={
+                  isMobileMenuOpen
+                    ? { opacity: 1, x: 0 }
+                    : { opacity: 0, x: -20 }
+                }
+                transition={{ duration: 0.3, delay: navItems.length * 0.1 + 0.1 }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Log In
-              </a>
-              <a href="/signup" className="glass-button block w-full px-4 py-2 rounded-lg text-primary-foreground font-medium text-center">
+              </motion.a>
+              <motion.a 
+                href="/signup" 
+                className="glass-button block w-full px-4 py-2 rounded-lg text-primary-foreground font-medium text-center"
+                initial={{ opacity: 0, x: -20 }}
+                animate={
+                  isMobileMenuOpen
+                    ? { opacity: 1, x: 0 }
+                    : { opacity: 0, x: -20 }
+                }
+                transition={{ duration: 0.3, delay: navItems.length * 0.1 + 0.2 }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Sign Up
-              </a>
+              </motion.a>
             </div>
           </div>
         </motion.div>
