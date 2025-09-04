@@ -16,16 +16,6 @@ const Pricing = () => {
   const personalPlans = {
     monthly: [
       {
-        id: "trial",
-        name: "Trial Plan",
-        price: "$0",
-        period: "/week",
-        storage: "25 GB",
-        features: ["7-day free trial", "Basic file sharing", "Cross-device sync", "Email support"],
-        popular: false,
-        originalPrice: undefined,
-      },
-      {
         id: "basic",
         name: "Basic",
         price: "$29",
@@ -154,16 +144,6 @@ const Pricing = () => {
 
   const businessPlans = {
     monthly: [
-      {
-        id: "trial",
-        name: "Trial",
-        price: "$0",
-        period: "/fortnight",
-        storage: "50 GB",
-        features: ["14-day free trial", "Team collaboration", "Basic admin controls", "Email support"],
-        popular: false,
-        originalPrice: undefined,
-      },
       {
         id: "launch",
         name: "Launch",
@@ -323,6 +303,40 @@ const Pricing = () => {
         </div>
       </section>
 
+      {/* Trial Card */}
+      <section className="pb-8">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="flex justify-center mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <Card className="glass-card max-w-md mx-auto bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
+              <CardContent className="p-6 text-center">
+                <div className="flex items-center justify-center gap-4 mb-4">
+                  <div className="flex flex-col items-center">
+                    <span className="text-2xl font-bold text-primary">25GB</span>
+                    <span className="text-sm text-muted-foreground">Storage</span>
+                  </div>
+                  <div className="w-px h-12 bg-border"></div>
+                  <div className="flex flex-col items-center">
+                    <span className="text-2xl font-bold text-primary">7 Days</span>
+                    <span className="text-sm text-muted-foreground">Free Trial</span>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Try {activeTab === "personal" ? "SonikDrive" : "SonikDrive Business"} risk-free with full access to core features
+                </p>
+                <Button className="w-full glass-button bg-primary hover:bg-primary/90">
+                  Start Free Trial
+                </Button>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Pricing Cards */}
       <section className="pb-20">
         <div className="container mx-auto px-4">
@@ -345,7 +359,7 @@ const Pricing = () => {
               >
                 <Card className={`glass-card relative h-full ${plan.popular ? "ring-2 ring-primary" : ""}`}>
                   {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                       <div className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium flex items-center gap-1">
                         <Star className="w-4 h-4" />
                         Most Popular
@@ -353,7 +367,7 @@ const Pricing = () => {
                     </div>
                   )}
                   
-                  <CardHeader className="text-center pb-8">
+                  <CardHeader className={`text-center pb-8 ${plan.popular ? 'pt-8' : ''}`}>
                     <CardTitle className="text-xl font-bold">{plan.name}</CardTitle>
                     <div className="mt-4">
                       <div className="flex items-baseline justify-center">
