@@ -259,12 +259,42 @@ const Pricing = () => {
             </div>
           </motion.div>
 
+          {/* Trial Card */}
+          <motion.div 
+            className="flex justify-center mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+          >
+            <Card className="glass-card max-w-md mx-auto bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
+              <CardContent className="p-6 text-center">
+                <div className="flex items-center justify-center gap-4 mb-4">
+                  <div className="flex flex-col items-center">
+                    <span className="text-2xl font-bold text-primary">25GB</span>
+                    <span className="text-sm text-muted-foreground">Storage</span>
+                  </div>
+                  <div className="w-px h-12 bg-border"></div>
+                  <div className="flex flex-col items-center">
+                    <span className="text-2xl font-bold text-primary">7 Days</span>
+                    <span className="text-sm text-muted-foreground">Free Trial</span>
+                  </div>
+                </div>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Try {activeTab === "personal" ? "SonikDrive" : "SonikDrive Business"} risk-free with full access to core features
+                </p>
+                <Button className="w-full glass-button bg-primary hover:bg-primary/90">
+                  Start Free Trial
+                </Button>
+              </CardContent>
+            </Card>
+          </motion.div>
+
           {/* Sub-tab switcher for terms */}
           <motion.div 
             className="flex justify-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="glass-card p-2 rounded-full">
               <div className="flex space-x-2">
@@ -303,45 +333,11 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Trial Card */}
-      <section className="pb-8">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            className="flex justify-center mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <Card className="glass-card max-w-md mx-auto bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
-              <CardContent className="p-6 text-center">
-                <div className="flex items-center justify-center gap-4 mb-4">
-                  <div className="flex flex-col items-center">
-                    <span className="text-2xl font-bold text-primary">25GB</span>
-                    <span className="text-sm text-muted-foreground">Storage</span>
-                  </div>
-                  <div className="w-px h-12 bg-border"></div>
-                  <div className="flex flex-col items-center">
-                    <span className="text-2xl font-bold text-primary">7 Days</span>
-                    <span className="text-sm text-muted-foreground">Free Trial</span>
-                  </div>
-                </div>
-                <p className="text-muted-foreground text-sm mb-4">
-                  Try {activeTab === "personal" ? "SonikDrive" : "SonikDrive Business"} risk-free with full access to core features
-                </p>
-                <Button className="w-full glass-button bg-primary hover:bg-primary/90">
-                  Start Free Trial
-                </Button>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Pricing Cards */}
       <section className="pb-20">
         <div className="container mx-auto px-4">
           <motion.div 
-            className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto"
+            className="flex flex-wrap justify-center gap-4 max-w-full mx-auto overflow-x-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -355,7 +351,7 @@ const Pricing = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                className="w-full sm:w-80 max-w-sm"
+                className="flex-shrink-0 w-72"
               >
                 <Card className={`glass-card relative h-full flex flex-col ${plan.popular ? "ring-2 ring-primary" : ""}`}>
                   {plan.popular && (
