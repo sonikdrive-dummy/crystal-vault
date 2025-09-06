@@ -26,10 +26,10 @@ const Navigation = () => {
       className="fixed top-0 w-full z-50 glass-nav"
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center h-16">
           {/* Logo */}
           <motion.div
-            className="flex items-center space-x-2 flex-shrink-0"
+            className="flex items-center space-x-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -42,7 +42,7 @@ const Navigation = () => {
             <span className="text-xl font-bold gradient-text">SonikDrive</span>
           </motion.div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center justify-center space-x-8 flex-1">
             {navItems.map((item, index) => (
               <motion.a
@@ -59,25 +59,8 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Auth Buttons - Desktop */}
-          <div className="hidden md:flex items-center space-x-4 flex-shrink-0">
-            {/* <motion.a
-              href="/login"
-              className="px-6 py-2 text-foreground hover:text-primary font-medium transition-colors duration-200"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Log In
-            </motion.a>
-            <motion.a
-              href="/signup"
-              className="glass-button px-6 py-2 rounded-lg text-primary-foreground font-medium"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Sign Up
-            </motion.a> */}
-          </div>
+          {/* Spacer to balance the logo on mobile */}
+          <div className="md:hidden w-10"></div>
 
           {/* Mobile Menu Button */}
           <motion.button
