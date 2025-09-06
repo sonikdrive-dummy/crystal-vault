@@ -149,8 +149,8 @@ const ContactSalesModal = ({ isOpen, onClose }: ContactSalesModalProps) => {
                         className="glass-input peer pt-7 pb-3"
                       />
                     </FormControl>
-                    <FormLabel className={`absolute left-3 text-xs flex items-center gap-2 transition-all duration-200 pointer-events-none bg-background px-1 -ml-1 ${
-                      field.value ? '-top-2 text-primary' : 'top-3 text-muted-foreground peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-1 peer-focus:-ml-1'
+                    <FormLabel className={`absolute left-2 text-xs flex items-center gap-2 transition-all duration-200 pointer-events-none bg-background px-2 ${
+                      field.value ? '-top-2.5 text-primary' : 'top-4 text-muted-foreground peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2'
                     }`}>
                       <User className="w-4 h-4" />
                       Full Name
@@ -182,8 +182,8 @@ const ContactSalesModal = ({ isOpen, onClose }: ContactSalesModalProps) => {
                         className="glass-input peer pt-7 pb-3"
                       />
                     </FormControl>
-                    <FormLabel className={`absolute left-3 text-xs flex items-center gap-2 transition-all duration-200 pointer-events-none bg-background px-1 -ml-1 ${
-                      field.value ? '-top-2 text-primary' : 'top-3 text-muted-foreground peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-1 peer-focus:-ml-1'
+                    <FormLabel className={`absolute left-2 text-xs flex items-center gap-2 transition-all duration-200 pointer-events-none bg-background px-2 ${
+                      field.value ? '-top-2.5 text-primary' : 'top-4 text-muted-foreground peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2'
                     }`}>
                       <Mail className="w-4 h-4" />
                       Business Email
@@ -217,8 +217,8 @@ const ContactSalesModal = ({ isOpen, onClose }: ContactSalesModalProps) => {
                         ))}
                       </SelectContent>
                     </Select>
-                    <FormLabel className={`absolute left-3 text-xs flex items-center gap-2 transition-all duration-200 pointer-events-none bg-background px-1 -ml-1 ${
-                      field.value ? '-top-2 text-primary' : 'top-3 text-muted-foreground peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-1 peer-focus:-ml-1'
+                    <FormLabel className={`absolute left-2 text-xs flex items-center gap-2 transition-all duration-200 pointer-events-none bg-background px-2 ${
+                      field.value ? '-top-2.5 text-primary' : 'top-4 text-muted-foreground peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-background peer-focus:px-2'
                     }`}>
                       <HardDrive className="w-4 h-4" />
                       Required Storage
