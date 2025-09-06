@@ -141,17 +141,19 @@ const ContactSalesModal = ({ isOpen, onClose }: ContactSalesModalProps) => {
               }}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <User className="w-4 h-4" />
-                    Full Name
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Enter your full name"
-                      {...field}
-                      className="glass-input"
-                    />
-                  </FormControl>
+                  <div className="relative">
+                    <FormControl>
+                      <Input
+                        placeholder=" "
+                        {...field}
+                        className="glass-input peer pt-6 pb-2"
+                      />
+                    </FormControl>
+                    <FormLabel className="absolute left-3 top-1 text-xs text-muted-foreground flex items-center gap-2 transition-all duration-200 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-muted-foreground peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary">
+                      <User className="w-4 h-4" />
+                      Full Name
+                    </FormLabel>
+                  </div>
                   <FormMessage />
                 </FormItem>
               )}
@@ -169,18 +171,20 @@ const ContactSalesModal = ({ isOpen, onClose }: ContactSalesModalProps) => {
               }}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <Mail className="w-4 h-4" />
-                    Business Email
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      placeholder="Enter your business email"
-                      {...field}
-                      className="glass-input"
-                    />
-                  </FormControl>
+                  <div className="relative">
+                    <FormControl>
+                      <Input
+                        type="email"
+                        placeholder=" "
+                        {...field}
+                        className="glass-input peer pt-6 pb-2"
+                      />
+                    </FormControl>
+                    <FormLabel className="absolute left-3 top-1 text-xs text-muted-foreground flex items-center gap-2 transition-all duration-200 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-muted-foreground peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary">
+                      <Mail className="w-4 h-4" />
+                      Business Email
+                    </FormLabel>
+                  </div>
                   <FormMessage />
                 </FormItem>
               )}
@@ -194,24 +198,26 @@ const ContactSalesModal = ({ isOpen, onClose }: ContactSalesModalProps) => {
               }}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <HardDrive className="w-4 h-4" />
-                    Required Storage
-                  </FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger className="glass-input">
-                        <SelectValue placeholder="Select storage requirements" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {storageOptions.map((option) => (
-                        <SelectItem key={option.value} value={option.value}>
-                          {option.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <div className="relative">
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger className="glass-input pt-6 pb-2">
+                          <SelectValue placeholder=" " />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent className="bg-background/95 backdrop-blur-sm border">
+                        {storageOptions.map((option) => (
+                          <SelectItem key={option.value} value={option.value} className="bg-background/90">
+                            {option.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormLabel className="absolute left-3 top-1 text-xs text-primary flex items-center gap-2 transition-all duration-200 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-muted-foreground">
+                      <HardDrive className="w-4 h-4" />
+                      Required Storage
+                    </FormLabel>
+                  </div>
                   <FormMessage />
                 </FormItem>
               )}
