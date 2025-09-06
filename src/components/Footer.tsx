@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Cloud, Twitter, Github, Linkedin, Mail, Target } from "lucide-react";
+import { Cloud, Twitter, Linkedin, Mail, Instagram, Youtube } from "lucide-react";
 import { toast } from "@/components/ui/sonner";
 
 const Footer = () => {
@@ -66,8 +66,9 @@ const Footer = () => {
   };
 
   const socialLinks = [
+    { icon: Instagram, href: "https://www.instagram.com/sonikdriveofficial", label: "Instagram" },
     { icon: Twitter, href: "https://twitter.com/sonikdrive", label: "Twitter" },
-    // { icon: Github, href: "#github", label: "GitHub" },
+    { icon: Youtube, href: "https://www.youtube.com/@SonikDrive", label: "Youtube" },
     { icon: Linkedin, href: "https://linkedin.com/in/sonikdrive--553b51379", label: "LinkedIn" },
     { icon: Mail, href: "mailto:support@sonikdrive.com", label: "Email" },
   ];
