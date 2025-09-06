@@ -1,9 +1,43 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Cloud, Twitter, Github, Linkedin, Mail, Target } from "lucide-react";
+import { toast } from "@/components/ui/sonner";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) {
+      toast.error("Please enter your email address");
+      return;
+    }
+
+    if (!email.includes("@")) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    setIsSubscribing(true);
+    
+    // Simulate API call
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      toast.success("Successfully subscribed! Welcome to SonikDrive updates.", {
+        description: "You'll receive the latest features, security updates, and storage tips.",
+      });
+      setEmail("");
+    } catch (error) {
+      toast.error("Subscription failed. Please try again.");
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
+
   const footerLinks = {
     // product: [
     //   { label: "Features", href: "#features" },
@@ -141,20 +175,25 @@ const Footer = () => {
                 Get the latest features, security updates, and storage tips.
               </p>
             </div>
-            <div className="flex items-center space-x-3">
+            <form onSubmit={handleSubscribe} className="flex items-center space-x-3">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-4 py-2 rounded-lg bg-background border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isSubscribing}
+                className="px-4 py-2 rounded-lg bg-background border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 disabled:opacity-50"
               />
               <motion.button
-                className="glass-button px-6 py-2 rounded-lg text-primary-foreground font-medium"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                type="submit"
+                disabled={isSubscribing}
+                className="glass-button px-6 py-2 rounded-lg text-primary-foreground font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                whileHover={!isSubscribing ? { scale: 1.05 } : {}}
+                whileTap={!isSubscribing ? { scale: 0.95 } : {}}
               >
-                Subscribe
+                {isSubscribing ? "Subscribing..." : "Subscribe"}
               </motion.button>
-            </div>
+            </form>
           </div>
         </motion.div>
 
