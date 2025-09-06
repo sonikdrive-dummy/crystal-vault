@@ -25,11 +25,11 @@ const Navigation = () => {
       transition={{ duration: 0.6 }}
       className="fixed top-0 w-full z-50 glass-nav"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-2 flex-shrink-0"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -43,7 +43,7 @@ const Navigation = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center justify-center space-x-8 flex-1">
             {navItems.map((item, index) => (
               <motion.a
                 key={item.label}
@@ -60,7 +60,7 @@ const Navigation = () => {
           </div>
 
           {/* Auth Buttons - Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4 flex-shrink-0">
             {/* <motion.a
               href="/login"
               className="px-6 py-2 text-foreground hover:text-primary font-medium transition-colors duration-200"
