@@ -5,7 +5,7 @@ const nextConfig = {
     optimizePackageImports: ['@radix-ui/react-icons'],
   },
   // Configure for Replit environment
-  allowedDevOrigins: ['*'],
+  allowedDevOrigins: ['*', '*.replit.dev'],
   async headers() {
     return [
       {
