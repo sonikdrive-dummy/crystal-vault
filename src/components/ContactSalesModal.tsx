@@ -128,7 +128,7 @@ const ContactSalesModal = ({ isOpen, onClose }: ContactSalesModalProps) => {
         </DialogHeader>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
               control={form.control}
               name="name"
@@ -146,7 +146,7 @@ const ContactSalesModal = ({ isOpen, onClose }: ContactSalesModalProps) => {
                       <Input
                         placeholder=" "
                         {...field}
-                        className="glass-input peer pt-6 pb-2"
+                        className="glass-input peer pt-7 pb-3"
                       />
                     </FormControl>
                     <FormLabel className={`absolute left-3 text-xs flex items-center gap-2 transition-all duration-200 pointer-events-none bg-background px-1 -ml-1 ${
@@ -179,7 +179,7 @@ const ContactSalesModal = ({ isOpen, onClose }: ContactSalesModalProps) => {
                         type="email"
                         placeholder=" "
                         {...field}
-                        className="glass-input peer pt-6 pb-2"
+                        className="glass-input peer pt-7 pb-3"
                       />
                     </FormControl>
                     <FormLabel className={`absolute left-3 text-xs flex items-center gap-2 transition-all duration-200 pointer-events-none bg-background px-1 -ml-1 ${
@@ -205,7 +205,7 @@ const ContactSalesModal = ({ isOpen, onClose }: ContactSalesModalProps) => {
                   <div className="relative">
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
-                        <SelectTrigger className="glass-input pt-6 pb-2">
+                        <SelectTrigger className="glass-input pt-7 pb-3">
                           <SelectValue placeholder=" " />
                         </SelectTrigger>
                       </FormControl>
