@@ -4,7 +4,7 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['@radix-ui/react-icons'],
   },
-  // Configure for Replit environment
+  // Configure for Replit environment - allow all hosts for proxy
   async headers() {
     return [
       {
@@ -20,6 +20,12 @@ const nextConfig = {
   },
   async rewrites() {
     return [];
+  },
+  // Allow all hosts for Replit proxy
+  allowedHosts: ['*'],
+  // Disable host check for development
+  devIndicators: {
+    buildActivity: false,
   },
 };
 
