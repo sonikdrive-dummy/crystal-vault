@@ -11,11 +11,11 @@ const Navigation = () => {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blogs" },
-    { label: "Features", href: "#features" },
+    // { label: "Features", href: "#features" },
     { label: "Pricing", href: "/pricing" },
-    { label: "For Business", href: "#features" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "/contact" },
+    // { label: "For Business", href: "#features" },
+    // { label: "FAQ", href: "#faq" },
+    // { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -33,10 +33,13 @@ const Navigation = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="p-2 rounded-lg bg-gradient-primary">
-              <Cloud className="h-6 w-6 text-white" />
-            </div>
-            <span className="text-xl font-bold gradient-text">CloudVault</span>
+            {/* <div className="p-2 rounded-lg bg-gradient-primary"> */}
+                {/* <Cloud className="h-6 w-6 text-white" /> */}
+                <a href="/">
+                  <img src="./logo.png" alt="SonikDrive Logo" className="h-10 w-12" />
+                </a>
+            {/* </div> */}
+            <span className="text-xl font-bold gradient-text">SonikDrive</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -58,7 +61,7 @@ const Navigation = () => {
 
           {/* Auth Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-            <motion.a
+            {/* <motion.a
               href="/login"
               className="px-6 py-2 text-foreground hover:text-primary font-medium transition-colors duration-200"
               whileHover={{ scale: 1.05 }}
@@ -73,7 +76,7 @@ const Navigation = () => {
               whileTap={{ scale: 0.95 }}
             >
               Sign Up
-            </motion.a>
+            </motion.a> */}
           </div>
 
           {/* Mobile Menu Button */}

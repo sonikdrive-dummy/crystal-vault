@@ -1,41 +1,41 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cloud, Twitter, Github, Linkedin, Mail } from "lucide-react";
+import { Cloud, Twitter, Github, Linkedin, Mail, Target } from "lucide-react";
 
 const Footer = () => {
   const footerLinks = {
-    product: [
-      { label: "Features", href: "#features" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "Security", href: "#security" },
-      { label: "API", href: "#api" },
-    ],
+    // product: [
+    //   { label: "Features", href: "#features" },
+    //   { label: "Pricing", href: "#pricing" },
+    //   { label: "Security", href: "#security" },
+    //   { label: "API", href: "#api" },
+    // ],
     company: [
-      { label: "About", href: "#about" },
-      { label: "Blog", href: "#blog" },
-      { label: "Careers", href: "#careers" },
-      { label: "Contact", href: "#contact" },
+      { label: "About", href: "/about" },
+      { label: "Blog", href: "/blogs" },
+      // { label: "Careers", href: "#careers" },
+      { label: "Contact", href: "/contact" },
     ],
-    support: [
-      { label: "Help Center", href: "#help" },
-      { label: "Community", href: "#community" },
-      { label: "Status", href: "#status" },
-      { label: "System Status", href: "#system" },
-    ],
+    // support: [
+    //   { label: "Help Center", href: "#help" },
+    //   { label: "Community", href: "#community" },
+    //   { label: "Status", href: "#status" },
+    //   { label: "System Status", href: "#system" },
+    // ],
     legal: [
-      { label: "Privacy Policy", href: "#privacy" },
-      { label: "Terms of Service", href: "#terms" },
-      { label: "Cookie Policy", href: "#cookies" },
-      { label: "GDPR", href: "#gdpr" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+      // { label: "Cookie Policy", href: "#cookies" },
+      // { label: "GDPR", href: "#gdpr" },
     ],
   };
 
   const socialLinks = [
-    { icon: Twitter, href: "#twitter", label: "Twitter" },
-    { icon: Github, href: "#github", label: "GitHub" },
-    { icon: Linkedin, href: "#linkedin", label: "LinkedIn" },
-    { icon: Mail, href: "#email", label: "Email" },
+    { icon: Twitter, href: "https://twitter.com/sonikdrive", label: "Twitter" },
+    // { icon: Github, href: "#github", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/sonikdrive--553b51379", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:support@sonikdrive.com", label: "Email" },
   ];
 
   return (
@@ -43,8 +43,8 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
-          {/* Brand Section */}
-          <div className="lg:col-span-2">
+          {/* Brand Section - left aligned */}
+          <div className="lg:col-span-2 lg:col-start-1">
             <motion.div
               className="flex items-center space-x-2 mb-4"
               initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ const Footer = () => {
               <div className="p-2 rounded-lg bg-gradient-primary">
                 <Cloud className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold gradient-text">CloudVault</span>
+              <span className="text-xl font-bold gradient-text">SonikDrive</span>
             </motion.div>
             
             <motion.p
@@ -65,7 +65,8 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Secure, reliable, and easy-to-use cloud storage for individuals and businesses worldwide.
+              {/* Secure, reliable, and easy-to-use cloud storage for individuals and businesses worldwide. */}
+              Discover affordable personal cloud storage with SonikDrive. Store photos, files, and business data securely with fast uploads and no hidden costs.
             </motion.p>
 
             <motion.div
@@ -83,6 +84,7 @@ const Footer = () => {
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   title={social.label}
+                  target="_blank"
                 >
                   <social.icon className="h-4 w-4" />
                 </motion.a>
@@ -90,33 +92,36 @@ const Footer = () => {
             </motion.div>
           </div>
 
-          {/* Links Sections */}
-          {Object.entries(footerLinks).map(([category, links], categoryIndex) => (
-            <motion.div
-              key={category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 * (categoryIndex + 1) }}
-            >
-              <h3 className="font-semibold text-foreground mb-4 capitalize">
-                {category}
-              </h3>
-              <ul className="space-y-3">
-                {links.map((link, index) => (
-                  <li key={link.label}>
-                    <motion.a
-                      href={link.href}
-                      className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                      whileHover={{ x: 4 }}
-                    >
-                      {link.label}
-                    </motion.a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+          {/* Links Sections - right aligned on large screens */}
+          <div className="lg:col-span-4 lg:col-start-3 flex flex-col lg:flex-row justify-end items-start lg:items-stretch gap-8 lg:gap-16">
+            {Object.entries(footerLinks).map(([category, links], categoryIndex) => (
+              <motion.div
+                key={category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 * (categoryIndex + 1) }}
+                className="w-full lg:w-auto"
+              >
+                <h3 className="font-semibold text-foreground mb-4 capitalize text-right lg:text-left">
+                  {category}
+                </h3>
+                <ul className="space-y-3 text-right lg:text-left">
+                  {links.map((link, index) => (
+                    <li key={link.label}>
+                      <motion.a
+                        href={link.href}
+                        className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                        whileHover={{ x: 4 }}
+                      >
+                        {link.label}
+                      </motion.a>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Newsletter Signup */}
@@ -130,7 +135,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-2">
-                Stay updated with CloudVault
+                Stay updated with SonikDrive
               </h3>
               <p className="text-muted-foreground">
                 Get the latest features, security updates, and storage tips.
@@ -162,7 +167,7 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <p className="text-muted-foreground text-sm">
-            © 2024 CloudVault. All rights reserved.
+            © 2025 SonikDrive. All rights reserved.
           </p>
           
           <div className="flex items-center space-x-6 text-sm text-muted-foreground">

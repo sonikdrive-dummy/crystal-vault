@@ -64,6 +64,14 @@ const About = () => {
               >
                 <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
                 <p className="text-muted-foreground mb-4">
+                  At SonikDrive, our mission is to empower individuals and businesses with secure, reliable, and scalable cloud storage solutions.
+                  We are dedicated to providing seamless data access, advanced privacy features,
+                  and high-speed performance so you can store, manage, and share your files from anywhere in the world.
+                </p>
+                <p className="text-muted-foreground">
+                  With a focus on innovation, uptime, and user-centric design, we aim to be your trusted partner in digital storage and cloud backup.
+                </p>
+                {/* <p className="text-muted-foreground mb-4">
                   At SonikDrive, we believe that cloud storage should be fast, secure, and accessible to everyone. 
                   Our mission is to provide cutting-edge cloud storage solutions that empower individuals and 
                   businesses to store, sync, and share their data with confidence.
@@ -71,7 +79,7 @@ const About = () => {
                 <p className="text-muted-foreground">
                   We're committed to innovation, security, and delivering an exceptional user experience 
                   that makes managing your digital life effortless.
-                </p>
+                </p> */}
               </motion.div>
               
               <motion.div
@@ -83,21 +91,21 @@ const About = () => {
               >
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">10M+</div>
+                    <div className="text-3xl font-bold text-primary mb-2">1M+</div>
                     <div className="text-sm text-muted-foreground">Happy Users</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary mb-2">99.9%</div>
                     <div className="text-sm text-muted-foreground">Uptime</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">500PB</div>
+                  {/* <div className="text-center">
+                    <div className="text-3xl font-bold text-primary mb-2">100TB</div>
                     <div className="text-sm text-muted-foreground">Data Stored</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">150+</div>
+                    <div className="text-3xl font-bold text-primary mb-2">2+</div>
                     <div className="text-sm text-muted-foreground">Countries</div>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             </div>
@@ -174,41 +182,41 @@ const About = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  name: "Sarah Chen",
-                  title: "Chief Technology Officer",
-                  description: "Former Google engineer with 12+ years in cloud infrastructure and distributed systems.",
-                  image: "👩‍💻"
-                },
-                {
-                  name: "Marcus Rodriguez",
-                  title: "Head of Security",
-                  description: "Cybersecurity expert specializing in enterprise-grade encryption and data protection.",
+                  name: "Soham Mahapatra",
+                  title: "Founder & CEO",
+                  // description: "Former Google engineer with 12+ years in cloud infrastructure and distributed systems.",
                   image: "👨‍💼"
                 },
                 {
-                  name: "Dr. Emily Watson",
-                  title: "VP of Engineering",
-                  description: "PhD in Computer Science, leading our AI-powered optimization and smart sync technologies.",
-                  image: "👩‍🔬"
+                  name: "Nikhil Agrawal",
+                  title: "Co-Founder & CTO",
+                  // description: "Cybersecurity expert specializing in enterprise-grade encryption and data protection.",
+                  image: "👨‍💼"
                 },
                 {
-                  name: "James Park",
-                  title: "Product Manager",
-                  description: "User experience specialist ensuring our platform remains intuitive and powerful.",
-                  image: "👨‍💻"
+                  name: "Tejas Mahapatra",
+                  title: "Co-Founder & CPO",
+                  // description: "PhD in Computer Science, leading our AI-powered optimization and smart sync technologies.",
+                  image: "👨‍💼"
                 },
-                {
-                  name: "Lisa Zhang",
-                  title: "Head of Operations",
-                  description: "Global infrastructure expert managing our worldwide network of data centers.",
-                  image: "👩‍💼"
-                },
-                {
-                  name: "Alex Thompson",
-                  title: "Customer Success Lead",
-                  description: "Dedicated to ensuring every user gets the most out of their SonikDrive experience.",
-                  image: "👨‍🎯"
-                }
+                // {
+                //   name: "James Park",
+                //   title: "Product Manager",
+                //   description: "User experience specialist ensuring our platform remains intuitive and powerful.",
+                //   image: "👨‍💻"
+                // },
+                // {
+                //   name: "Lisa Zhang",
+                //   title: "Head of Operations",
+                //   description: "Global infrastructure expert managing our worldwide network of data centers.",
+                //   image: "👩‍💼"
+                // },
+                // {
+                //   name: "Alex Thompson",
+                //   title: "Customer Success Lead",
+                //   description: "Dedicated to ensuring every user gets the most out of their SonikDrive experience.",
+                //   image: "👨‍🎯"
+                // }
               ].map((expert, index) => (
                 <motion.div
                   key={index}
@@ -221,7 +229,7 @@ const About = () => {
                   <div className="text-6xl mb-4">{expert.image}</div>
                   <h3 className="text-xl font-semibold mb-2">{expert.name}</h3>
                   <p className="text-primary font-medium mb-3">{expert.title}</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{expert.description}</p>
+                  {/* <p className="text-muted-foreground text-sm leading-relaxed">{expert.description}</p> */}
                 </motion.div>
               ))}
             </div>
@@ -239,12 +247,30 @@ const About = () => {
               className="text-center mb-12"
             >
               <h2 className="text-3xl font-bold mb-4">Our Story</h2>
+              <div className="mb-12">
+                  <p className="text-muted-foreground max-w-3xl mx-auto mb-4 text-justify">
+                    SonikDrive started in 2025 out of frustration with overpriced cloud storage and sluggish file transfers.
+                    Paying more for less - slow speeds, hidden fees, and complicated plans made storing personal files online a hassle.
+                    The goal was to build a simpler, faster, and more affordable alternative.
+                  </p>
+                  <p className="text-muted-foreground max-w-3xl mx-auto text-justify">
+                    Backed by a dedicated team with a passion for building user-friendly technology, we’re here to make cloud storage work the way it should: seamless, affordable, and stress-free.
+                  </p>
+              </div>
+              {/* <p className="text-muted-foreground max-w-3xl mx-auto mb-4">
+                SonikDrive started in 2025 out of frustration with overpriced cloud storage and sluggish file transfers.
+                They were tired of paying more for less - slow speeds, hidden fees, and complicated plans made storing personal files online a hassle.
+                So, they set out to build a simpler, faster, and more affordable alternative.
+              </p>
               <p className="text-muted-foreground max-w-3xl mx-auto">
+                Backed by a dedicated team with a passion for building user-friendly technology, we’re here to make cloud storage work the way it should: seamless, affordable, and stress-free.
+              </p> */}
+              {/* <p className="text-muted-foreground max-w-3xl mx-auto">
                 Founded in 2020 by a team of cloud computing experts and security specialists, 
                 SonikDrive was born from the vision of making secure, high-performance cloud storage 
                 accessible to everyone. Starting from a small garage office, we've grown into a 
                 global platform trusted by millions of users worldwide.
-              </p>
+              </p> */}
             </motion.div>
 
             <motion.div
@@ -278,7 +304,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="mt-8">
+              {/* <div className="mt-8">
                 <div className="mb-3 text-sm text-muted-foreground">Price comparison for 2TB plans (lower is better)</div>
                 <ChartContainer config={chartConfig} className="w-full">
                   <BarChart data={priceData} margin={{ left: 12, right: 12 }}>
@@ -291,7 +317,7 @@ const About = () => {
                   </BarChart>
                 </ChartContainer>
                 <p className="mt-2 text-xs text-muted-foreground">SonikDrive offers the most affordable plan without compromising performance.</p>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </section>

@@ -83,17 +83,17 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Email</h3>
-                      <p className="text-muted-foreground">support@cloudstorage.com</p>
+                      <p className="text-muted-foreground">support@sonikdrive.com</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-4">
+                  {/* <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <Phone className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-semibold">Phone</h3>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-muted-foreground">+91 </p>
                     </div>
                   </div>
                   
@@ -108,14 +108,14 @@ const Contact = () => {
                         San Francisco, CA 94105
                       </p>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="pt-6">
                     <h3 className="font-semibold mb-4">Business Hours</h3>
                     <div className="space-y-2 text-muted-foreground">
-                      <p>Monday - Friday: 9:00 AM - 6:00 PM PST</p>
-                      <p>Saturday: 10:00 AM - 4:00 PM PST</p>
-                      <p>Sunday: Closed</p>
+                      <p>Monday - Friday: 8:00 AM - 10:00 PM IST</p>
+                      <p>Saturday - Sunday: 9:00 AM - 8:00 PM IST</p>
+                      {/* <p>Sunday: Closed</p> */}
                     </div>
                   </div>
                 </CardContent>

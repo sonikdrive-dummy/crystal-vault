@@ -35,7 +35,7 @@ const Terms = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Last updated: December 2024
+            Last updated: August 2025
           </motion.p>
         </div>
       </section>
@@ -107,14 +107,31 @@ const Terms = () => {
                   <li>Malware, viruses, or malicious code</li>
                   <li>Content that infringes on intellectual property rights</li>
                   <li>Spam or unsolicited communications</li>
-                  <li>Content that violates privacy or data protection laws</li>
+                  <li>Content that violates privacy or data protection laws</li><br />
+                  <li>If you store or upload any illegal content, you will be solely responsible for any legal consequences, liabilities, or damages arising from such actions in any case. We are not liable for any illegal content stored or uploaded by users.</li>
                 </ul>
               </CardContent>
             </Card>
 
             <Card className="glass-card">
               <CardHeader>
-                <CardTitle>5. Payment and Billing</CardTitle>
+                <CardTitle>5. Content Ownership</CardTitle>
+              </CardHeader>
+              <CardContent className="prose prose-gray dark:prose-invert max-w-none">
+                {/* <p>
+                  You agree not to use our service to store, share, or transmit:
+                </p> */}
+                <ul>
+                  <li><strong>Your Content:</strong> You retain ownership of all content you upload. By using our service, you grant us a non-exclusive, royalty-free license to store and transmit your content as necessary to provide the service.</li>
+                  <li><strong>Prohibited Content:</strong> Do not upload content that is illegal, infringes on intellectual property rights, or violates our policies. We reserve the right to remove or restrict access to any content at our sole discretion without liability.</li>
+                  <li><strong>Content Liability:</strong> You are solely responsible for the content you upload, including its legality, accuracy, and appropriateness. We disclaim any liability for damages or losses arising from your content.</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle>6. Payment and Billing</CardTitle>
               </CardHeader>
               <CardContent className="prose prose-gray dark:prose-invert max-w-none">
                 <p>
@@ -131,29 +148,52 @@ const Terms = () => {
 
             <Card className="glass-card">
               <CardHeader>
-                <CardTitle>6. Service Availability</CardTitle>
+                <CardTitle>7. Service Availability</CardTitle>
               </CardHeader>
               <CardContent className="prose prose-gray dark:prose-invert max-w-none">
                 <p>
-                  We strive to maintain 99.9% uptime but do not guarantee uninterrupted service. We may perform maintenance that temporarily affects service availability.
+                  We strive to provide continuous service but do not guarantee uninterrupted access. We are not liable for any damages or losses due to service interruptions, downtime, or maintenance.. We may perform maintenance that temporarily affects service availability.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="glass-card">
               <CardHeader>
-                <CardTitle>7. Limitation of Liability</CardTitle>
+                <CardTitle>8. Limitation of Liability</CardTitle>
               </CardHeader>
               <CardContent className="prose prose-gray dark:prose-invert max-w-none">
-                <p>
+                {/* <p>
                   In no event shall our company or its suppliers be liable for any damages arising out of the use or inability to use our service, even if we have been notified of the possibility of such damage.
-                </p>
+                </p> */}
+                <ul>
+                  <li><strong>Maximum Liability:</strong>  In no event will our liability to you exceed the amount of fees paid by you to us in the 3 months preceding the event giving rise to the claim.</li>
+                  <li><strong>Exclusion of Damages:</strong> We will not be liable for any damages, including but not limited to loss of data, business interruption, or loss of profits.</li>
+                  <li><strong>No Warranty:</strong> Our services are provided "as is" and "as available" without warranties of any kind, express or implied, including but not limited to fitness for a particular purpose or non-infringement.</li>
+                </ul>
               </CardContent>
             </Card>
 
             <Card className="glass-card">
               <CardHeader>
-                <CardTitle>8. Termination</CardTitle>
+                <CardTitle>9. Indemnification</CardTitle>
+              </CardHeader>
+              <CardContent className="prose prose-gray dark:prose-invert max-w-none">
+                <p>
+                  You agree to indemnify, defend, and hold harmless SonikDrive, its affiliates, officers, directors, employees, and agents from any claims, liabilities, damages, losses, or expenses (including legal fees) arising from:
+                </p>
+                <ul>
+                  <li>Your use of our service</li>
+                  <li>Your violation of these Terms or applicable laws;</li>
+                  <li>Your content, including any infringement of third-party rights; or</li>
+                  <li>Any actions taken by you or through your account.</li>
+                  <li>This indemnification obligation survives the termination of your account or these Terms.</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle>10. Termination</CardTitle>
               </CardHeader>
               <CardContent className="prose prose-gray dark:prose-invert max-w-none">
                 <p>
@@ -164,7 +204,7 @@ const Terms = () => {
 
             <Card className="glass-card">
               <CardHeader>
-                <CardTitle>9. Changes to Terms</CardTitle>
+                <CardTitle>11. Changes to Terms</CardTitle>
               </CardHeader>
               <CardContent className="prose prose-gray dark:prose-invert max-w-none">
                 <p>
@@ -175,16 +215,27 @@ const Terms = () => {
 
             <Card className="glass-card">
               <CardHeader>
-                <CardTitle>10. Contact Information</CardTitle>
+                <CardTitle>12. No Third-Party Beneficiaries</CardTitle>
+              </CardHeader>
+              <CardContent className="prose prose-gray dark:prose-invert max-w-none">
+                <p>
+                  These Terms are between you and SonikDrive. No third party shall have any rights or benefits under these Terms.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle>13. Contact Information</CardTitle>
               </CardHeader>
               <CardContent className="prose prose-gray dark:prose-invert max-w-none">
                 <p>
                   If you have questions about these Terms & Conditions, please contact us at:
                 </p>
                 <p>
-                  Email: legal@cloudstorage.com<br />
-                  Address: 123 Cloud Street, San Francisco, CA 94105
-                </p>
+                  Email: <a href="mailto:">legal@sonikdrive.com</a>
+                </p><br /><br />
+                Thank you for choosing SonikDrive! By using our application, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. We’re committed to providing secure and reliable storage solutions.
               </CardContent>
             </Card>
           </motion.div>

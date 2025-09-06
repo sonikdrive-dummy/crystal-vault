@@ -19,7 +19,7 @@ const Pricing = () => {
     if (isPersonal) {
       setIsModalOpen(true);
     } else {
-      window.open("https://sonik.com/signup", "_blank");
+      window.open("https://business.sonikdrive.com/signup", "_blank");
     }
   };
 
@@ -28,7 +28,7 @@ const Pricing = () => {
       {
         id: "basic",
         name: "Basic",
-        price: "$29",
+        price: "₹29",
         period: "/month",
         storage: "50 GB",
         features: ["Cross-device sync", "File sharing", "Basic support", "30-day version history"],
@@ -38,7 +38,7 @@ const Pricing = () => {
       {
         id: "standard",
         name: "Standard",
-        price: "$49",
+        price: "₹49",
         period: "/month",
         storage: "100 GB",
         features: ["Everything in Basic", "Priority support", "90-day version history", "Advanced sharing"],
@@ -48,7 +48,7 @@ const Pricing = () => {
       {
         id: "premium",
         name: "Premium",
-        price: "$229",
+        price: "₹229",
         period: "/month",
         storage: "500 GB",
         features: ["Everything in Standard", "Premium support", "1-year version history", "Advanced security"],
@@ -58,7 +58,7 @@ const Pricing = () => {
       {
         id: "pro",
         name: "SonikDrive Pro",
-        price: "$349",
+        price: "₹349",
         period: "/month",
         storage: "1 TB",
         features: ["Everything in Premium", "24/7 support", "Unlimited version history", "Enterprise security"],
@@ -70,9 +70,9 @@ const Pricing = () => {
       {
         id: "basic",
         name: "Basic",
-        price: "$174",
+        price: "₹174",
         period: "/6 months",
-        originalPrice: "$174",
+        originalPrice: "₹174",
         storage: "50 GB",
         features: ["Cross-device sync", "File sharing", "Basic support", "30-day version history"],
         popular: false,
@@ -80,9 +80,9 @@ const Pricing = () => {
       {
         id: "standard",
         name: "Standard",
-        price: "$294",
+        price: "₹294",
         period: "/6 months",
-        originalPrice: "$294",
+        originalPrice: "₹294",
         storage: "100 GB",
         features: ["Everything in Basic", "Priority support", "90-day version history", "Advanced sharing"],
         popular: true,
@@ -90,9 +90,9 @@ const Pricing = () => {
       {
         id: "premium",
         name: "Premium",
-        price: "$1,314",
+        price: "₹1,314",
         period: "/6 months",
-        originalPrice: "$1,374",
+        originalPrice: "₹1,374",
         storage: "500 GB",
         features: ["Everything in Standard", "Premium support", "1-year version history", "Advanced security"],
         popular: false,
@@ -100,9 +100,9 @@ const Pricing = () => {
       {
         id: "pro",
         name: "SonikDrive Pro",
-        price: "$2,034",
+        price: "₹2,034",
         period: "/6 months",
-        originalPrice: "$2,094",
+        originalPrice: "₹2,094",
         storage: "1 TB",
         features: ["Everything in Premium", "24/7 support", "Unlimited version history", "Enterprise security"],
         popular: false,
@@ -112,9 +112,9 @@ const Pricing = () => {
       {
         id: "basic",
         name: "Basic",
-        price: "$348",
+        price: "₹348",
         period: "/year",
-        originalPrice: "$348",
+        originalPrice: "₹348",
         storage: "50 GB",
         features: ["Cross-device sync", "File sharing", "Basic support", "30-day version history"],
         popular: false,
@@ -122,9 +122,9 @@ const Pricing = () => {
       {
         id: "standard",
         name: "Standard",
-        price: "$540",
+        price: "₹540",
         period: "/year",
-        originalPrice: "$588",
+        originalPrice: "₹588",
         storage: "100 GB",
         features: ["Everything in Basic", "Priority support", "90-day version history", "Advanced sharing"],
         popular: true,
@@ -132,9 +132,9 @@ const Pricing = () => {
       {
         id: "premium",
         name: "Premium",
-        price: "$2,508",
+        price: "₹2,508",
         period: "/year",
-        originalPrice: "$2,748",
+        originalPrice: "₹2,748",
         storage: "500 GB",
         features: ["Everything in Standard", "Premium support", "1-year version history", "Advanced security"],
         popular: false,
@@ -142,9 +142,9 @@ const Pricing = () => {
       {
         id: "pro",
         name: "SonikDrive Pro",
-        price: "$3,948",
+        price: "₹3,948",
         period: "/year",
-        originalPrice: "$4,188",
+        originalPrice: "₹4,188",
         storage: "1 TB",
         features: ["Everything in Premium", "24/7 support", "Unlimited version history", "Enterprise security"],
         popular: false,
@@ -157,30 +157,30 @@ const Pricing = () => {
       {
         id: "launch",
         name: "Launch",
-        price: "$139",
+        price: "₹139",
         period: "/user/month",
         storage: "100 GB",
-        features: ["Team collaboration", "Admin controls", "Advanced security", "Priority support", "SSO integration"],
+        features: ["Upto 2 versions per file", "Email support", "Scheduled Phone Support"],
         popular: false,
         originalPrice: undefined,
       },
       {
         id: "grow",
         name: "Grow",
-        price: "$599",
+        price: "₹599",
         period: "/user/month",
         storage: "500 GB",
-        features: ["Everything in Launch", "Advanced analytics", "Compliance tools", "24/7 support", "Custom integrations"],
+        features: ["Everything in Launch", "Upto 5 versions per file", "Email support", "Scheduled Phone Support", "Analytics Dashboard", "Admin controls"],
         popular: true,
         originalPrice: undefined,
       },
       {
         id: "scale",
         name: "Scale",
-        price: "$1,099",
+        price: "₹1,099",
         period: "/user/month",
         storage: "1 TB",
-        features: ["Everything in Grow", "Dedicated support", "Advanced compliance", "Custom workflows", "Enterprise features"],
+        features: ["Everything in Grow", "Unlimited file versioning", "Priority Email support", "Immediate Phone Support", "Advanced Analytics", "Dedicated support"],
         popular: false,
         originalPrice: undefined,
       },
@@ -189,9 +189,9 @@ const Pricing = () => {
       {
         id: "launch",
         name: "Launch",
-        price: "$1,428",
+        price: "₹1,428",
         period: "/user/year",
-        originalPrice: "$1,668",
+        originalPrice: "₹1,668",
         storage: "100 GB",
         features: ["Team collaboration", "Admin controls", "Advanced security", "Priority support", "SSO integration"],
         popular: false,
@@ -199,9 +199,9 @@ const Pricing = () => {
       {
         id: "grow",
         name: "Grow",
-        price: "$6,588",
+        price: "₹6,588",
         period: "/user/year",
-        originalPrice: "$7,188",
+        originalPrice: "₹7,188",
         storage: "500 GB",
         features: ["Everything in Launch", "Advanced analytics", "Compliance tools", "24/7 support", "Custom integrations"],
         popular: true,
@@ -209,9 +209,9 @@ const Pricing = () => {
       {
         id: "scale",
         name: "Scale",
-        price: "$12,288",
+        price: "₹12,288",
         period: "/user/year",
-        originalPrice: "$13,188",
+        originalPrice: "₹13,188",
         storage: "1 TB",
         features: ["Everything in Grow", "Dedicated support", "Advanced compliance", "Custom workflows", "Enterprise features"],
         popular: false,
@@ -224,7 +224,7 @@ const Pricing = () => {
       <Navigation />
       
       {/* Header */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <section className="pt-32 pb-8 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
         <div className="container mx-auto px-4 text-center">
           <motion.h1 
             className="text-4xl md:text-6xl font-bold text-foreground mb-6"
@@ -271,7 +271,7 @@ const Pricing = () => {
 
           {/* Trial Card */}
           <motion.div 
-            className="flex justify-center mb-8"
+            className="flex justify-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
@@ -280,12 +280,12 @@ const Pricing = () => {
               <CardContent className="p-6 text-center">
                 <div className="flex items-center justify-center gap-4 mb-4">
                   <div className="flex flex-col items-center">
-                    <span className="text-2xl font-bold text-primary">25GB</span>
+                    <span className="text-2xl font-bold text-primary">{activeTab === "personal" ? "25" : "50"}GB</span>
                     <span className="text-sm text-muted-foreground">Storage</span>
                   </div>
                   <div className="w-px h-12 bg-border"></div>
                   <div className="flex flex-col items-center">
-                    <span className="text-2xl font-bold text-primary">7 Days</span>
+                    <span className="text-2xl font-bold text-primary">{activeTab === "personal" ? "7" : "14"} Days</span>
                     <span className="text-sm text-muted-foreground">Free Trial</span>
                   </div>
                 </div>
@@ -380,14 +380,44 @@ const Pricing = () => {
                     <CardTitle className="text-xl font-bold">{plan.name}</CardTitle>
                     <div className="mt-4">
                       <div className="flex items-baseline justify-center">
-                        <span className="text-3xl font-bold text-primary">{plan.price}</span>
-                        <span className="text-muted-foreground ml-1 text-sm">{plan.period}</span>
+                        <span className="text-3xl font-bold text-primary">
+                          {(() => {
+                            // Personal semi-annual: divide by 6
+                            if (activeTab === "personal" && personalTerm === "semi-annually") {
+                              const priceNum = Number(plan.price.replace(/[^\d.]/g, ""));
+                              return `₹${Math.round(priceNum / 6)}`;
+                            }
+                            // Personal annual: divide by 12
+                            if (activeTab === "personal" && personalTerm === "annually") {
+                              const priceNum = Number(plan.price.replace(/[^\d.]/g, ""));
+                              return `₹${Math.round(priceNum / 12)}`;
+                            }
+                            // Business annual: divide by 12
+                            if (activeTab === "business" && businessTerm === "annually") {
+                              const priceNum = Number(plan.price.replace(/[^\d.]/g, ""));
+                              return `₹${Math.round(priceNum / 12)}`;
+                            }
+                            // Otherwise, show as is
+                            return plan.price;
+                          })()}
+                        </span>
+                        <span className="text-muted-foreground ml-1 text-sm">
+                          {(() => {
+                            if (activeTab === "personal" && (personalTerm === "semi-annually" || personalTerm === "annually")) {
+                              return "/month";
+                            }
+                            if (activeTab === "business" && businessTerm === "annually") {
+                              return "/user/month";
+                            }
+                            return plan.period;
+                          })()}
+                        </span>
                       </div>
-                      {plan.originalPrice && (
+                      {/* {plan.originalPrice && (
                         <div className="text-sm text-muted-foreground line-through mt-1">
                           {plan.originalPrice}
                         </div>
-                      )}
+                      )} */}
                     </div>
                     <CardDescription className="text-base font-medium mt-2">
                       {plan.storage} storage
@@ -406,10 +436,10 @@ const Pricing = () => {
                     
                     <Button 
                       className={`w-full glass-button mt-6 ${plan.popular ? "bg-primary hover:bg-primary/90" : ""}`}
-                      variant={plan.popular ? "default" : "outline"}
+                      variant="default"
                       onClick={() => handlePlanClick(plan.id, activeTab === "personal")}
                     >
-                      {plan.price === "$0" ? "Start Free Trial" : `Choose ${plan.name}`}
+                      {plan.price === "₹0" ? "Start Free Trial" : `Choose ${plan.name}`}
                     </Button>
                   </CardContent>
                 </Card>

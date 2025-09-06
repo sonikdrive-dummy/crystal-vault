@@ -19,7 +19,7 @@ interface BusinessOnlyModalProps {
 
 const BusinessOnlyModal = ({ isOpen, onClose, type }: BusinessOnlyModalProps) => {
   const handleBusinessSignup = () => {
-    window.open("https://sonik.com/signup", "_blank");
+    window.open("https://business.sonikdrive.com/signup", "_blank");
     onClose();
   };
 
@@ -35,26 +35,26 @@ const BusinessOnlyModal = ({ isOpen, onClose, type }: BusinessOnlyModalProps) =>
             )}
           </div>
           <DialogTitle className="text-xl font-semibold text-center">
-            {type === "general" ? "Currently for Business Users" : "Individual Plans Coming Soon"}
+            {type === "general" ? "Currently for Business Users" : "The Cloud’s Still Warming Up for You"}
           </DialogTitle>
           <div className="text-center space-y-3 text-sm text-muted-foreground">
             {type === "general" ? (
               <>
-                <div>We're currently open to business users only.</div>
-                <div>If you are a business user, please proceed.</div>
-                <div className="text-xs">
+                <div>We're currently open to business users only. <br/> If you are a business user, please proceed.</div>
+                <div></div>
+                {/* <div className="text-xs">
                   We are actively working to support individual users soon — thank you for your patience.
-                </div>
+                </div> */}
               </>
             ) : (
               <>
-                <div>We are actively working to support individual users soon.</div>
+                <div>We’re still fine-tuning the cloud for individual users.</div>
                 <div className="text-xs">
-                  Our team is currently focused on delivering enterprise-grade features and expanding our infrastructure to provide the best possible experience for individual users.
+                  Right now, our team’s heads-down building powerful features and scaling the cloud so your future experience is smooth, fast, and seriously awesome.
                 </div>
-                <div className="text-xs">
+                {/* <div className="text-xs">
                   In the meantime, if you represent a business, we'd be happy to assist you with our current offerings.
-                </div>
+                </div> */}
               </>
             )}
           </div>

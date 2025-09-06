@@ -52,8 +52,9 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            Store, share, and collaborate with ease and confidence. 
-            Your files are safe, accessible, and always in sync.
+            Optimized for Performance. Designed for Trust.
+            {/* Store, share, and collaborate with ease and confidence. 
+            Your files are safe, accessible, and always in sync. */}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -73,7 +74,7 @@ const HeroSection = () => {
               <ArrowRight className="h-5 w-5" />
             </motion.button>
 
-            <motion.button
+            {/* <motion.button
               className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-200 group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -82,7 +83,7 @@ const HeroSection = () => {
                 <Play className="h-5 w-5 ml-1" />
               </div>
               <span className="text-lg font-medium">Watch Demo</span>
-            </motion.button>
+            </motion.button> */}
           </motion.div>
 
           {/* Trust Indicators */}
@@ -98,11 +99,11 @@ const HeroSection = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Shield className="h-4 w-4 text-success" />
-              <span>Bank-level security</span>
+              <span>Guarded with Care</span>
             </div>
             <div className="flex items-center space-x-2">
               <Users className="h-4 w-4 text-accent" />
-              <span>Trusted by 10M+ users</span>
+              <span>Trusted by 1M+ users</span>
             </div>
           </motion.div>
         </div>

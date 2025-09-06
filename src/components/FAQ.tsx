@@ -15,47 +15,90 @@ const faqData: FAQItem[] = [
   {
     id: "1",
     category: "General",
-    question: "What is cloud storage and how does it work?",
-    answer: "Cloud storage allows you to store files online and access them from any device with an internet connection. Your files are securely stored on our servers and synchronized across all your devices."
+    question: "Does SonikDrive store my files?",
+    answer: "No, we don’t store your data. SonikDrive acts as a secure middleware solution, your files are uploaded directly to your connected cloud storage account, protected by Microsoft’s advanced security measures."
   },
+  
   {
-    id: "2", 
+    id: "123",
     category: "General",
-    question: "Is my data safe and secure?",
-    answer: "Yes, we use enterprise-grade encryption both in transit and at rest. Your files are protected with AES-256 encryption, and we follow strict security protocols to ensure your data remains private and secure."
+    question: "Can I upgrade my plan?",
+    answer: "Yes, you can upgrade your plan anytime! Remaining days from your current plan are adjusted into the new plan for a seamless transition."
   },
   {
-    id: "3",
-    category: "Personal Plans",
-    question: "Can I upgrade my storage plan at any time?",
-    answer: "Absolutely! You can upgrade your storage plan at any time through your account settings. The change will take effect immediately, and you'll only pay the prorated difference."
-  },
-  {
-    id: "4",
-    category: "Personal Plans", 
+    id: "1234",
+    category: "General", 
     question: "What happens if I exceed my storage limit?",
     answer: "If you reach your storage limit, you'll receive notifications to upgrade your plan. You can still access your existing files, but you won't be able to upload new ones until you free up space or upgrade."
   },
   {
-    id: "5",
+    id: "12345",
+    category: "General",
+    question: "How do I cancel or change my subscription?",
+    answer: "SonikDrive doesn’t let you cancel your subscription yourself, it stops on its own if you don’t renew it. If you don’t renew within 15 days after it ends, all the files you uploaded will be deleted. To switch your plan, go to your account settings on our website or ask our support team for help."
+  },
+  {
+    id: "123456",
+    category: "General",
+    question: "Are there file size or type limits for uploads and downloads?",
+    answer: "No, SonikDrive imposes no file size or type limits. You can upload and download any file type with no additional restrictions from our app."
+  },
+  {
+    id: "1234567",
+    category: "General",
+    question: "Can I extend my trial period?",
+    answer: "Yes, trial extensions are available for both Business and Personal users. To request an extension, please contact our support team at support@sonikdrive.com with your account details and the reason for your request. We’ll review your request and do our best to accommodate your needs."
+  },
+  {
+    id: "3",
+    category: "Personal Plans",
+    question: "Can I share files through SonikDrive?",
+    answer: "Yes! SonikDrive allows you to share your files easily by generating shareable links. You can send these links to others for quick and secure access to your files."
+  },
+  {
+    id: "2",
     category: "Business Plans",
     question: "Do you offer team collaboration features?",
     answer: "Yes, our business plans include advanced collaboration features like shared folders, team permissions, real-time editing, commenting, and version control to help your team work together efficiently."
   },
   {
-    id: "6",
+    id: "23",
     category: "Business Plans",
-    question: "Can I integrate with existing business tools?",
-    answer: "Yes, we offer integrations with popular business tools including Microsoft Office 365, Google Workspace, Slack, and many others. Our API also allows for custom integrations."
+    question: "How do I access and manage files as a Business user?",
+    answer: "Business users manage files exclusively through our RESTful APIs. Upon successful signup, an API key will be provided in your dashboard for authentication and access."
   },
   {
-    id: "7",
+    id: "234",
+    category: "Business Plans",
+    question: "Is the API documentation available?",
+    answer: "You can access comprehensive API documentation directly from the dashboard."
+  },
+  {
+    id: "2345",
+    category: "Business Plans",
+    question: "Is there a UI for Business users to manage files?",
+    answer: "The Business module is API-driven and does not include a File Manager UI. This allows for greater flexibility in integrating our storage solution into your existing systems."
+  },
+  // {
+  //   id: "6",
+  //   category: "Business Plans",
+  //   question: "Can I integrate with existing business tools?",
+  //   answer: "Yes, we offer integrations with popular business tools including Microsoft Office 365, Google Workspace, Slack, and many others. Our API also allows for custom integrations."
+  // },
+  {
+    id: "4",
     category: "Security",
-    question: "Do you support two-factor authentication?",
-    answer: "Yes, we strongly recommend enabling two-factor authentication (2FA) for added security. You can use authenticator apps or SMS verification to secure your account."
+    question: "Is my data secure with SonikDrive?",
+    answer: "Absolutely. Your privacy and security are our top priorities. All files are transmitted and stored using secure, encrypted protocols, ensuring that your data remains protected at every step, without being accessed, indexed, or stored by us."
   },
+  // {
+  //   id: "8",
+  //   category: "Security",
+  //   question: "Do you support two-factor authentication?",
+  //   answer: "Yes, we strongly recommend enabling two-factor authentication (2FA) for added security. You can use authenticator apps or SMS verification to secure your account."
+  // },
   {
-    id: "8",
+    id: "45",
     category: "Security",
     question: "What compliance standards do you follow?",
     answer: "We comply with major security and privacy standards including GDPR, HIPAA, SOC 2 Type II, and ISO 27001. Our business plans include additional compliance features for regulated industries."

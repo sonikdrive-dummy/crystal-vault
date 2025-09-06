@@ -42,7 +42,7 @@ const Index = () => {
       <TabContent activeTab={activeTab} />
 
       {/* Trust & Testimonials */}
-      <TrustSection />
+      {/* <TrustSection /> */}
 
       {/* FAQ Section */}
       <FAQ />

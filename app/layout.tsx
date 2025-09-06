@@ -10,8 +10,8 @@ import React from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "React ShadCN App",
-  description: "A modern React application with ShadCN UI",
+  title: "SonikDrive - Secure Cloud Storage for Everyone",
+  description: "Optimized for Performance. Designed for Trust.",
 };
 
 export default function RootLayout({

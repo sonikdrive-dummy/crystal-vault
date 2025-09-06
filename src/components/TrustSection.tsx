@@ -46,7 +46,7 @@ const TrustSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-muted-foreground mb-8">Trusted by 10M+ users worldwide</p>
+          <p className="text-muted-foreground mb-8">Trusted by 1M+ users worldwide</p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
             {trustedCompanies.map((company, index) => (
               <motion.div
@@ -76,7 +76,7 @@ const TrustSection = () => {
               What Our Users Say
             </h2>
             <p className="text-xl text-muted-foreground">
-              Join thousands of satisfied users who trust CloudVault
+              Join thousands of satisfied users who trust SonikDrive
             </p>
           </div>
 

@@ -12,7 +12,8 @@ import {
   Briefcase,
   FileText,
   Settings,
-  Lock
+  Lock,
+  IndianRupee
 } from "lucide-react";
 import BusinessOnlyModal from "./BusinessOnlyModal";
 
@@ -27,7 +28,7 @@ const TabContent = ({ activeTab }: TabContentProps) => {
     if (activeTab === "personal") {
       setIsModalOpen(true);
     } else {
-      window.open("https://sonik.com/signup", "_blank");
+      window.open("https://business.sonikdrive.com/signup", "_blank");
     }
   };
   const personalFeatures = [
@@ -42,9 +43,9 @@ const TabContent = ({ activeTab }: TabContentProps) => {
       description: "Access your files from anywhere, on any device. Automatic sync keeps everything up-to-date across all your devices."
     },
     {
-      icon: DollarSign,
+      icon: IndianRupee,
       title: "Affordable Plans",
-      description: "Get started free with 5GB storage. Upgrade to premium plans with generous storage at competitive prices."
+      description: "Get started free trial with 25GB storage. Upgrade to premium plans with generous storage at competitive prices."
     },
     {
       icon: Lock,
@@ -56,18 +57,18 @@ const TabContent = ({ activeTab }: TabContentProps) => {
   const businessFeatures = [
     {
       icon: Users,
-      title: "Team Collaboration",
-      description: "Real-time collaboration tools, shared workspaces, and team management features for seamless productivity."
+      title: "Developer-First API Access",
+      description: "Programmatically upload, manage, and retrieve files with our developer-friendly RESTful API."
     },
     {
       icon: Shield,
       title: "Advanced Security",
-      description: "Enterprise-grade security with SSO integration, two-factor authentication, and compliance certifications."
+      description: "Secure your business data with state-of-the-art encryption, API authentication, and proactive threat monitoring."
     },
     {
       icon: Briefcase,
       title: "Admin Controls",
-      description: "Comprehensive admin dashboard with user management, usage analytics, and security monitoring."
+      description: "Comprehensive admin dashboard with usage analytics, and security monitoring."
     },
     {
       icon: Settings,

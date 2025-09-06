@@ -35,7 +35,7 @@ const Privacy = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Last updated: December 2024
+            Last updated: August 2025
           </motion.p>
         </div>
       </section>
@@ -232,9 +232,9 @@ const Privacy = () => {
                   If you have questions about this Privacy Policy, please contact us:
                 </p>
                 <p>
-                  Email: privacy@cloudstorage.com<br />
-                  Address: 123 Cloud Street, San Francisco, CA 94105<br />
-                  Data Protection Officer: dpo@cloudstorage.com
+                  Email: privacy@sonikdrive.com<br />
+                  {/* Address: 123 Cloud Street, San Francisco, CA 94105<br /> */}
+                  Data Protection Officer: dpo@sonikdrive.com
                 </p>
               </CardContent>
             </Card>
