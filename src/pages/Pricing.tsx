@@ -8,12 +8,14 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import BusinessOnlyModal from "@/components/BusinessOnlyModal";
+import ContactSalesModal from "@/components/ContactSalesModal";
 
 const Pricing = () => {
   const [activeTab, setActiveTab] = useState<"personal" | "business">("personal");
   const [personalTerm, setPersonalTerm] = useState<"monthly" | "semi-annually" | "annually">("monthly");
   const [businessTerm, setBusinessTerm] = useState<"monthly" | "annually">("monthly");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isContactSalesOpen, setIsContactSalesOpen] = useState(false);
 
   const handlePlanClick = (planId: string, isPersonal: boolean) => {
     if (isPersonal) {
@@ -462,7 +464,11 @@ const Pricing = () => {
                     Contact our sales team for custom enterprise solutions with dedicated support, 
                     advanced compliance, and tailored integrations.
                   </p>
-                  <Button variant="outline" className="glass-button">
+                  <Button 
+                    variant="outline" 
+                    className="glass-button"
+                    onClick={() => setIsContactSalesOpen(true)}
+                  >
                     Contact Sales
                   </Button>
                 </CardContent>
@@ -478,6 +484,11 @@ const Pricing = () => {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         type="general" 
+      />
+      
+      <ContactSalesModal 
+        isOpen={isContactSalesOpen} 
+        onClose={() => setIsContactSalesOpen(false)} 
       />
     </div>
   );
